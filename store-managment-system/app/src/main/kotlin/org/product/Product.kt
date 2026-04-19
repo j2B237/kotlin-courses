@@ -20,4 +20,15 @@ class Product (var name : String? = null,
     // Writable property, field getter and setter
     var id : Long = counter.incrementAndGet()
 
+    fun infos(){
+        println("Product\n\tName: $name\n\tPrice: ${if (price == null) 0.0 else price} FCFA\n" +
+                "\tStock: ${if (stock == null) 0.0 else stock} item(s)")
+    }
+
+    /*[Setter]*/
+    fun price(price : Double){
+        if (price < 0)
+            throw IllegalArgumentException ("Price should be positive")
+        this.price(price)
+    }
 }

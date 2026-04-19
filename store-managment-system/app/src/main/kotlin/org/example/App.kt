@@ -3,13 +3,23 @@
  */
 package org.example
 
+import org.product.*
+
 class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
-        }
+
 }
 
 fun main() {
-    println(App().greeting)
+    var p1 = Product()
+
+    try {
+        // This is how you invoke setter in kotlin
+        p1.price = 150.0
+    }
+    catch (e : Exception){
+        println ("ERROR:: ${e.message}")
+    }
+    finally {
+        p1.infos()
+    }
 }
