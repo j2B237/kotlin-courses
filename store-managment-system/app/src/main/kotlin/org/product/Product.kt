@@ -9,15 +9,15 @@ package org.product
 import java.util.concurrent.atomic.AtomicLong
 
 /*[Default constructor]*/
-class Product (var name : String?,
-    var price : Double?,
-    var stock : Long?) {
+class Product (var name : String? = null,
+    var price : Double? = null,
+    var stock : Long? = null) {
 
-    // classe variable
+    // class variable
     companion object {
         val counter : AtomicLong = AtomicLong(0)
     }
-
+    // Writable property, field getter and setter
     var id : Long = counter.incrementAndGet()
-    
+
 }
